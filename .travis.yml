@@ -1,0 +1,17 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+before_script: bash ./.bin/build.sh
+
+script:
+  - ls -al ./css/stylie.css
+
+after_success: bash ./.bin/deploy.sh
+
+env:
+  global:
+    - GH_REF: github.com/mignonstyle/ms-widget-customize-refresh.git
+    - secure: "vX0+U2wED38jgZRubhLIW1XrYFu33Ciu54ZeF2QO044pG7eEgDBpLUwJdZEK40sfYhPbmKqI0DktxvJYchwBTybnaYg+f130Ov6ygjD5Sw6shFuAc0wLqT6DeE2M9nPsmhohhgK+NBjWRV2VCyLnyg/rp7K5ZQScFhJdy2ZHcNnNpUL/6ONVv/BZOKmb2hFRx1H63sw8azb8HxkjoO1kNJXpMQbPbNborDenl6aVih9f1KIvoSpjcxeiT9Y0PeUQVr6H/BDS9gfKSBcu5ugLbv7fXCO95NdGX2eZ0lb4cb4vbRqv4JqyR47lFlSir3Aa/cOTRH/pd7nFQIAEDB6bstw2Fpm2udz9lhZ5E7rw/L1b3tVxFszpiZghxtpsepm+Y8pDJ1ihWbKnTuuG9bMTjzXWA7yuMHy7zSp+GUgKfVwaxaWXmdrQaeEQ+6mA1E4vsuKZEztwwqvR+WCAi+no0XIVIuQBkYgk6PS6y4w5Vg2cCbOr5mOQv72ISro5kFXIGJQoa+RJs44/MN4dli5Jxksxu3iMxE6rb8sSAurnPKdmcGHwMiK27R3JVxX3KirG4oSBuk+jCnfPRVFwkjAvpEkWTDo9rZnd20wMXixgr2gnNVFUaEsU7UntRAIRlXJEBQC8i67mo2TQ4JZGHRKdZOhc1HP4q233/g/znQw0bqk="

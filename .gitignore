@@ -1,3 +1,7 @@
+# gitignore
+# Author: Mignon Style
+# version: 1.0
+
 # Exclude any PSD/AI source
 #*.psd
 #*.ai

@@ -4,6 +4,9 @@
 # WordPress Coding Standards
 # https://make.wordpress.org/core/handbook/coding-standards/
 
+# Author: Mignon Style
+# version: 1.0
+
 root = true
 
 [*]
