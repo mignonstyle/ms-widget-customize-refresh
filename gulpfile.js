@@ -2,7 +2,7 @@
 // $ npm install
 // $ npm run build
 
-//var gulp        = require( 'gulp' );
+var gulp        = require( 'gulp' );
 //var path        = require('path');
 //var $           = require( 'gulp-load-plugins' )();
 //var browserSync = require( 'browser-sync' );

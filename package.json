@@ -2,23 +2,15 @@
   "name": "@mignonstyle/ms-widget-customize-refresh",
   "version": "1.0.0",
   "description": "The JavaScript test code for the live preview,  do not use the auto-reload of the original widget of WordPress.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mignonstyle/ms-widget-customize-refresh.git"
-  },
   "author": {
     "name": "Mignon Style",
     "url": "http://mignonstyle.com"
   },
   "license": "GPLv2",
-  "homepage": "",
   "scripts": {
     "build": "./node_modules/gulp/bin/gulp.js",
   },
-  "browserify-shim": {
-    "jquery": "global:jQuery"
-  },
   "devDependencies": {
-
+    "gulp": "^3.9.1"
   }
 }
