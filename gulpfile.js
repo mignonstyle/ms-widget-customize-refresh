@@ -3,36 +3,36 @@
 // $ npm run build
 
 var gulp        = require( 'gulp' );
-var path        = require('path');
-var $           = require( 'gulp-load-plugins' )();
+//var path        = require('path');
+//var $           = require( 'gulp-load-plugins' )();
 var browserSync = require( 'browser-sync' );
 
 var paths = {
 	// base paths
-	"phpSrc" : "./**/*.php",
+	//"phpSrc" : "./**/*.php",
 
-	"scssSrc" : "./src/scss/**/*.scss",
-	"scssDir" : "./css/",
+	//"scssSrc" : "./src/scss/**/*.scss",
+	//"scssDir" : "./css/",
 
-	"jsSrc" : "./src/js/**/*.js",
-	"jsDir" : "./js/",
+	//"jsSrc" : "./src/js/**/*.js",
+	//"jsDir" : "./js/",
 
-	"imgSrc" : "./src/images/**",
-	"imgDir" : "./images/",
+	//"imgSrc" : "./src/images/**",
+	//"imgDir" : "./images/",
 
 	// admin widget paths
-	"admin_scssSrc" : "./src/admin/admin-widget/*.scss",
+	//"admin_scssSrc" : "./src/admin/admin-widget/*.scss",
 
-	"widget_scssSrc" : "./src/admin/admin-widget/widget-scss/**/*.scss",
-	"widget_scssDir" : "./admin/widget/widget-css/",
+	//"widget_scssSrc" : "./src/admin/admin-widget/widget-scss/**/*.scss",
+	//"widget_scssDir" : "./admin/widget/widget-css/",
 
-	"widget_jsSrc" : "./src/admin/admin-widget/widget-js/**/*.js",
-	"widget_jsDir" : "./admin/widget/widget-js/",
+	//"widget_jsSrc" : "./src/admin/admin-widget/widget-js/**/*.js",
+	//"widget_jsDir" : "./admin/widget/widget-js/",
 
-	"widget_imgSrc" : "./src/admin/admin-widget/widget-images/**/**",
-	"widget_imgDir" : "./admin/widget/widget-images/",
+	//"widget_imgSrc" : "./src/admin/admin-widget/widget-images/**/**",
+	//"widget_imgDir" : "./admin/widget/widget-images/",
 }
-
+/*
 gulp.task( 'browser-sync', function() {
 	browserSync.init( {
 		proxy  : "http://vccw.dev/",
@@ -40,7 +40,8 @@ gulp.task( 'browser-sync', function() {
 		xip    : false
 	} );
 } );
-
+*/
+/*
 gulp.task( 'scss', function() {
 	return gulp.src( paths.scssSrc )
 		.pipe( $.sass() ).on( 'error', $.sass.logError )
@@ -58,7 +59,8 @@ gulp.task( 'scss', function() {
 		once   : true
 	} ) );
 } );
-
+*/
+/*
 gulp.task( 'widget-scss', function() {
 	return gulp.src( paths.widget_scssSrc )
 		.pipe( $.sass() ).on( 'error', $.sass.logError )
@@ -76,11 +78,13 @@ gulp.task( 'widget-scss', function() {
 		once   : true
 	} ) );
 } );
-
+*/
+/*
 gulp.task( 'bs-reload', function() {
 	browserSync.reload();
 } );
-
+*/
+/*
 gulp.task( 'image', function() {
 	return gulp.src( paths.imgSrc )
 		.pipe( $.changed( paths.imgDir ) )
@@ -89,7 +93,8 @@ gulp.task( 'image', function() {
 		} ) )
 		.pipe( gulp.dest( paths.imgDir ) );
 } );
-
+*/
+/*
 gulp.task( 'widget-image', function() {
 	return gulp.src( paths.widget_imgSrc )
 		.pipe( $.changed( paths.widget_imgDir ) )
@@ -98,6 +103,7 @@ gulp.task( 'widget-image', function() {
 		} ) )
 		.pipe( gulp.dest( paths.widget_imgDir ) );
 } );
+*/
 /*
 gulp.task( 'js', function() {
 	return gulp.src( paths.jsSrc )
@@ -105,7 +111,8 @@ gulp.task( 'js', function() {
 	)
 	.pipe( gulp.dest( paths.jsDir ) );
 } );
-
+*/
+/*
 gulp.task( 'js-min', function() {
 	return gulp.src( paths.jsSrc )
 		.pipe( $.uglify( {preserveComments: 'license'} ) )
@@ -114,11 +121,13 @@ gulp.task( 'js-min', function() {
 	.pipe( gulp.dest( paths.jsDir ) );
 } );
 */
+/*
 gulp.task( 'widget-js', function() {
 	return gulp.src( paths.widget_jsSrc )
 		.pipe( gulp.dest( paths.widget_jsDir ) );
 } );
-
+*/
+/*
 gulp.task( 'widget-js-min', function() {
 	return gulp.src( paths.widget_jsSrc )
 		.pipe( $.uglify( {preserveComments: 'license'} ) )
@@ -127,7 +136,9 @@ gulp.task( 'widget-js-min', function() {
 		} ) )
 		.pipe( gulp.dest( paths.widget_jsDir ) );
 } );
+*/
 
+/*
 gulp.task( 'default', ['image', 'widget-image', 'browser-sync', 'scss', 'widget-scss', 'widget-js', 'widget-js-min', 'bs-reload'], function() {
 
 	$.watch( [paths.phpSrc], function( e ) {
@@ -147,6 +158,7 @@ gulp.task( 'default', ['image', 'widget-image', 'browser-sync', 'scss', 'widget-
 	$.watch( [paths.widget_imgSrc], function( e ) {
 		gulp.start( 'widget-image' )
 	} );
+*/
 	/*
 	$.watch( [paths.jsSrc], function( e ) {
 		gulp.start( 'js' )
@@ -155,7 +167,7 @@ gulp.task( 'default', ['image', 'widget-image', 'browser-sync', 'scss', 'widget-
 		gulp.start( 'js-min' )
 	} );
 */
-
+/*
 	$.watch( [paths.widget_jsSrc], function( e ) {
 		gulp.start( 'widget-js' )
 	} );
@@ -163,3 +175,4 @@ gulp.task( 'default', ['image', 'widget-image', 'browser-sync', 'scss', 'widget-
 		gulp.start( 'widget-js-min' )
 	} );
 } );
+*/
