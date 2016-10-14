@@ -1,0 +1,248 @@
+/* --------------------------------------------------
+ * Admin Common
+ * ------------------------------------------------*/
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block; }
+
+.text-note {
+  color: #999; }
+
+/* --------------------------------------------------
+ * admin widget common
+ * ------------------------------------------------*/
+.ms-widget-common input {
+  max-width: 100%; }
+  .ms-widget-common input[type="number"] {
+    min-width: 80px; }
+
+.ms-widget-common h3 {
+  margin: 0; }
+
+.ms-widget-common .contents-hide {
+  display: none; }
+
+.ms-widget-common .contents-show {
+  display: initial; }
+
+.ms-widget-common .input-space {
+  display: block;
+  margin-top: 0.25em; }
+
+.ms-widget-common .small {
+  font-size: 0.9em; }
+
+.ms-widget-common .buttons {
+  margin-bottom: 0.5em; }
+
+.ms-widget-common .widget-button {
+  margin: 5px 0 0 0;
+  float: left; }
+  .ms-widget-common .widget-button:first-child {
+    margin-right: 0.5em; }
+
+.ms-widget-common .widget-upload-button {
+  background: #eee;
+  border-color: #aaa; }
+  .ms-widget-common .widget-upload-button:hover {
+    background: #f7f7f7;
+    border-color: #999; }
+
+.ms-widget-common .widget-remove-button {
+  background: #999;
+  border-color: #777;
+  color: #fff; }
+  .ms-widget-common .widget-remove-button:hover {
+    background: #f25959;
+    border-color: #777;
+    color: #fff; }
+
+/* --------------------------------------------------
+ * Icon Font Admin Style Common
+ * ------------------------------------------------*/
+.icon-contents .widget-icon-preview .icon-preview {
+  margin: 0 10px 7px; }
+  .icon-contents .widget-icon-preview .icon-preview i {
+    font-size: 5em;
+    color: #666 !important; }
+
+.icon-contents .icons-inner,
+.icon-contents .buttons-inner {
+  display: none; }
+
+.icon-contents .buttons_icon {
+  margin-right: 5px; }
+
+.icon-contents-box > p {
+  margin: 0; }
+
+.buttons-inner + p {
+  margin: 0; }
+
+#wpfooter + #font_awesome-list {
+  display: none; }
+
+/* --------------------------------------------------
+ * Icon Font thickbox Style
+ * ------------------------------------------------*/
+#TB_overlay {
+  z-index: 999999; }
+
+#TB_window {
+  border-radius: 20px;
+  z-index: 999999; }
+
+#TB_ajaxWindowTitle {
+  font-size: 22px;
+  padding: 0 16px;
+  line-height: 55px; }
+
+#TB_title {
+  border-radius: 20px 20px 0 0;
+  height: 55px; }
+
+#TB_ajaxContent {
+  box-sizing: border-box;
+  padding: 0 0 0 20px;
+  overflow: hidden;
+  position: relative; }
+  #TB_ajaxContent > p {
+    display: none; }
+  #TB_ajaxContent p {
+    padding: 0; }
+  #TB_ajaxContent .icon-preview {
+    display: none; }
+
+.tb-close-icon {
+  line-height: 55px;
+  padding: 5px 10px; }
+
+@media (max-width: 640px) {
+  #TB_window {
+    width: 96% !important;
+    width: calc(100% - 20px);
+    margin-left: 0 !important;
+    left: 10px !important;
+    right: 10px !important; }
+  #TB_ajaxContent {
+    width: 98% !important; } }
+
+.icon-lists {
+  height: 85%;
+  height: calc(100% - 60px);
+  margin: 0;
+  padding: 0 5px 0 0;
+  overflow: auto; }
+  .icon-lists .icons-inner {
+    padding-right: 10px; }
+  .icon-lists .icon-list {
+    box-sizing: border-box;
+    border: solid 3px #f9f9f9;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 12px 5px 0;
+    margin: 0.2%;
+    overflow: hidden;
+    float: left;
+    height: 58px;
+    width: 24%;
+    word-wrap: break-word; }
+    .icon-lists .icon-list:hover {
+      border-color: #008ec2; }
+    .icon-lists .icon-list.on {
+      border-color: #008ec2; }
+    @media (min-width: 641px) {
+      .icon-lists .icon-list {
+        height: 68px;
+        min-width: 68px;
+        padding-top: 10px;
+        width: 9.4%; } }
+  .icon-lists .icon-name {
+    font-size: 2em; }
+  .icon-lists .icon-label {
+    display: none;
+    line-height: 1.1;
+    font-size: 0.8em;
+    margin: 3px 0; }
+    @media (min-width: 641px) {
+      .icon-lists .icon-label {
+        display: block; } }
+
+.buttons-inner {
+  text-align: right;
+  padding-right: 15px; }
+  @media (min-width: 641px) {
+    .buttons-inner {
+      padding-right: 10px; } }
+
+/* --------------------------------------------------
+ * Icon Font Style
+ * ------------------------------------------------*/
+.icon-contents {
+  margin-bottom: 1em; }
+  .icon-contents.remove-icon-select > p {
+    margin: 0; }
+  .icon-contents.remove-icon-select .icon-lists {
+    display: none; }
+  .icon-contents > p {
+    margin: 1em 0 0; }
+  .icon-contents .icon-lists {
+    display: block; }
+
+.ms-widget-common .icon-contents .widget_button {
+  margin-bottom: 0; }
+
+/* --------------------------------------------------
+ * admin widget radio common
+ * ------------------------------------------------*/
+.radio-contents label {
+  margin-right: 2em; }
+  .radio-contents label:last-of-type {
+    margin-right: 0; }
+
+.radio-contents.radio-image label {
+  float: left;
+  max-width: 100px;
+  text-align: center; }
+
+.radio-contents.radio-image img {
+  background: #fff;
+  border: solid 4px #fff;
+  display: block;
+  height: auto;
+  max-width: 100px; }
+
+.radio-contents.radio-image input {
+  display: none; }
+  .radio-contents.radio-image input[type="radio"]:checked + img {
+    border-color: #ccc;
+    background: #ccc; }
+
+/* --------------------------------------------------
+ * admin widget radio style
+ * ------------------------------------------------*/
+.radio-labels {
+  margin-bottom: 0; }
+
+/* --------------------------------------------------
+ * Uploader common style
+ * ------------------------------------------------*/
+.widget-media-upload {
+  margin: 1em 0 1.2em; }
+
+.widget-upload-preview {
+  margin: 0.2em 0 0; }
+  .widget-upload-preview img {
+    height: auto;
+    margin: 0.1em 0 0;
+    max-height: 200px;
+    max-width: 100%; }
+
+/* --------------------------------------------------
+ * picker common style
+ * ------------------------------------------------*/
+.picker-contents .input-space {
+  margin-top: -2px; }

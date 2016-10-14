@@ -1,0 +1,47 @@
+/* --------------------------------------------------
+ * Icon Font Admin Style Common
+ * ------------------------------------------------*/
+
+// --------------------------------------------------
+// Admin Widget Icon Font
+// --------------------------------------------------
+.icon-contents {
+	.widget-icon-preview {
+		.icon-preview {
+			margin: 0 10px 7px;
+			i {
+				font-size: 5em;
+				color: #666 !important;
+			}
+		}
+	}
+	.icons-inner,
+	.buttons-inner {
+		display: none;
+	}
+
+	.buttons {
+		&_icon {
+			margin-right: 5px;
+		}
+	}
+}
+.icon-contents-box {
+	& > p {
+		margin: 0;
+	}
+}
+.buttons-inner {
+	& + p {
+		margin: 0;
+	}
+}
+
+// --------------------------------------------------
+// widget.php footer display
+// --------------------------------------------------
+#wpfooter {
+	& + #font_awesome-list {
+		display: none;
+	}
+}

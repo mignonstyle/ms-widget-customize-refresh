@@ -1,0 +1,38 @@
+{
+  "name": "@mignonstyle/ms-widget-customize-refresh",
+  "version": "1.0.0",
+  "description": "The JavaScript test code for the live preview,  do not use the auto-reload of the original widget of WordPress.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mignonstyle/ms-widget-customize-refresh.git"
+  },
+  "author": {
+    "name": "Mignon Style",
+    "url": "http://mignonstyle.com"
+  },
+  "license": "GPLv2",
+  "homepage": "",
+  "scripts": {
+    "build": "./node_modules/gulp/bin/gulp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.17.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.10",
+    "require-dir": "^0.3.1"
+  }
+}

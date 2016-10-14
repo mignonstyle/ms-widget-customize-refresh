@@ -1,0 +1,66 @@
+/* --------------------------------------------------
+ * admin widget common
+ * ------------------------------------------------*/
+.ms-widget-common {
+// ------------------------------------------------
+// widget base style
+// ------------------------------------------------
+input {
+	max-width: 100%;
+	&[type="number"] {
+		min-width: 80px;
+	}
+}
+h3 {
+	margin: 0;
+}
+
+// ------------------------------------------------
+// contents common
+// ------------------------------------------------
+.contents-hide {
+	display: none;
+}
+.contents-show {
+	display: initial;
+}
+.input-space {
+	display: block;
+	margin-top: 0.25em;
+}
+.small {
+	font-size: 0.9em;
+}
+
+// ------------------------------------------------
+// buttons common
+// ------------------------------------------------
+.buttons {
+	margin-bottom: 0.5em;
+}
+.widget-button {
+	margin: 5px 0 0 0;
+	float: left;
+	&:first-child {
+		margin-right: 0.5em;
+	}
+}
+.widget-upload-button {
+	background: #eee;
+	border-color: #aaa;
+	&:hover {
+		background: #f7f7f7;
+		border-color: #999;
+	}
+}
+.widget-remove-button {
+	background: #999;
+	border-color: #777;
+	color: #fff;
+	&:hover {
+		background: #f25959;
+		border-color: #777;
+		color: #fff;
+	}
+}
+} // .ms-widget-common

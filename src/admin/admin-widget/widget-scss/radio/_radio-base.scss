@@ -1,0 +1,36 @@
+/* --------------------------------------------------
+ * admin widget radio common
+ * ------------------------------------------------*/
+
+// --------------------------------------------------
+// radio
+// --------------------------------------------------
+.radio-contents {
+	label {
+		margin-right: 2em;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+	&.radio-image {
+		label {
+			float: left;
+			max-width: 100px;
+			text-align: center;
+		}
+		img {
+			background: #fff;
+			border: solid 4px #fff;
+			display: block;
+			height: auto;
+			max-width: 100px;
+		}
+		input {
+			display: none;
+			&[type="radio"]:checked + img {
+				border-color: #ccc;
+				background: #ccc;
+			}
+		}
+	}
+}

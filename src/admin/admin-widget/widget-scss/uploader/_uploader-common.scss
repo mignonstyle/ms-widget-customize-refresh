@@ -1,0 +1,15 @@
+/* --------------------------------------------------
+ * Uploader common style
+ * ------------------------------------------------*/
+.widget-media-upload {
+	margin: 1em 0 1.2em;
+}
+.widget-upload-preview {
+	margin: 0.2em 0 0;
+	img {
+		height: auto;
+		margin: 0.1em 0 0;
+		max-height: 200px;
+		max-width: 100%;
+	}
+}

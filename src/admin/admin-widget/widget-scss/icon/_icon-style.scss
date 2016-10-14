@@ -1,0 +1,27 @@
+/* --------------------------------------------------
+ * Icon Font Style
+ * ------------------------------------------------*/
+.icon-contents {
+	margin-bottom: 1em;
+	&.remove-icon-select {
+		& >	p {
+				margin: 0;
+		}
+		.icon-lists {
+			display: none;
+		}
+	}
+	& >	p {
+			margin: 1em 0 0;
+	}
+	.icon-lists {
+		display: block;
+	}
+}
+.ms-widget-common {
+	.icon-contents {
+		.widget_button {
+			margin-bottom: 0;
+		}
+	}
+}

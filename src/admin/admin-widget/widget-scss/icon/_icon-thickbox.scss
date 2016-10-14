@@ -1,0 +1,124 @@
+/* --------------------------------------------------
+ * Icon Font thickbox Style
+ * ------------------------------------------------*/
+
+// --------------------------------------------------
+// Icon thickbox base
+// --------------------------------------------------
+#TB_overlay {
+	z-index: 999999;
+}
+#TB_window {
+	border-radius: $box-radius;
+	z-index: 999999;
+}
+#TB_ajaxWindowTitle {
+	font-size: 22px;
+	padding: 0 16px;
+	line-height: 55px;
+}
+#TB_title {
+	border-radius: $box-radius $box-radius 0 0;
+	height: 55px;
+}
+#TB_ajaxContent {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 0 0 20px;
+	overflow: hidden;
+	position: relative;
+	& > p {
+		display: none;
+	}
+	p {
+		padding: 0;
+	}
+	.icon-preview {
+		display: none;
+	}
+}
+.tb-close-icon {
+	line-height: 55px;
+	padding: 5px 10px;
+}
+@media (max-width: 640px) {
+	#TB_window {
+		width: 96% !important;
+		width: -webkit-calc(100% - 20px);
+		width: calc(100% - 20px);
+		margin-left: 0 !important;
+		left: 10px !important;
+		right: 10px !important;
+	}
+	#TB_ajaxContent {
+		width: 98% !important;
+	}
+}
+
+// --------------------------------------------------
+// Icon Font List thickbox
+// --------------------------------------------------
+.icon-lists {
+	height: 85%;
+	height: -webkit-calc(100% - 60px);
+	height: calc(100% - 60px);
+	margin: 0;
+	padding: 0 5px 0 0;
+	overflow: auto;
+	.icons-inner {
+		padding-right: 10px;
+	}
+	.icon-list {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		border: solid 3px #f9f9f9;
+		cursor: pointer;
+		font-size: 1em;
+		text-align: center;
+		background: #f9f9f9;
+		padding: 12px 5px 0;
+		margin: 0.2%;
+		overflow: hidden;
+		float: left;
+		height: 58px;
+		width: 24%;
+		word-wrap: break-word;
+		&:hover {
+			border-color: #008ec2;
+		}
+		&.on {
+			border-color: #008ec2;
+		}
+		@media (min-width: 641px) {
+			height: 68px;
+			min-width: 68px;
+			padding-top: 10px;
+			width: 9.4%;
+		}
+	}
+	.icon-name {
+		font-size: 2em;
+	}
+	.icon-label {
+		display: none;
+		line-height: 1.1;
+		font-size: 0.8em;
+		margin: 3px 0;
+		@media (min-width: 641px) {
+			display: block;
+		}
+	}
+}
+
+// --------------------------------------------------
+// Icon select button
+// --------------------------------------------------
+.buttons-inner {
+	text-align: right;
+	padding-right: 15px;
+	@media (min-width: 641px) {
+		padding-right: 10px;
+	}
+}
