@@ -2,12 +2,12 @@
 // $ npm install
 // $ npm run build
 
-var gulp        = require( 'gulp' );
+//var gulp        = require( 'gulp' );
 //var path        = require('path');
 //var $           = require( 'gulp-load-plugins' )();
-var browserSync = require( 'browser-sync' );
+//var browserSync = require( 'browser-sync' );
 
-var paths = {
+//var paths = {
 	// base paths
 	//"phpSrc" : "./**/*.php",
 
@@ -31,7 +31,7 @@ var paths = {
 
 	//"widget_imgSrc" : "./src/admin/admin-widget/widget-images/**/**",
 	//"widget_imgDir" : "./admin/widget/widget-images/",
-}
+//}
 /*
 gulp.task( 'browser-sync', function() {
 	browserSync.init( {

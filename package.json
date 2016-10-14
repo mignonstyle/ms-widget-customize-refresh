@@ -19,8 +19,6 @@
     "jquery": "global:jQuery"
   },
   "devDependencies": {
-    "browser-sync": "^2.17.1",
-    "gulp": "^3.9.1"
 
   }
 }
