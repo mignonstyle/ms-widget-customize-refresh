@@ -176,3 +176,7 @@ gulp.task( 'default', ['image', 'widget-image', 'browser-sync', 'scss', 'widget-
 	} );
 } );
 */
+
+gulp.task( 'default', function () {
+
+} );
