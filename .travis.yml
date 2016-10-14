@@ -7,7 +7,7 @@ branches:
 before_script: bash ./.bin/build.sh
 
 script:
-  - ls -al ./css/stylie.css
+  - ls -al ./css/style.css
 
 
 env:
