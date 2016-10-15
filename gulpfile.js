@@ -61,12 +61,10 @@ gulp.task( 'scss', function() {
 	} ) )
 	.pipe( csso() )
 	.pipe( gulp.dest( paths.scssDir ) )
-    /*
 	.pipe( browserSync.reload( {
 		stream : true,
 		once   : true
 	} ) );
-    */
 } );
 
 /*
