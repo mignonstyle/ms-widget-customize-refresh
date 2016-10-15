@@ -99,7 +99,6 @@ gulp.task( 'widget-scss', function() {
 // ------------------------------------------------
 // JS Tasks
 // ------------------------------------------------
-
 gulp.task( 'js', function() {
     return gulp.src( paths.jsSrc )
         .pipe( concat( 'main.js' ) )
@@ -144,65 +143,39 @@ gulp.task( 'watch', [
     'js-min',
     'widget-js',
     'widget-js-min',
-    'browser-sync'
-    ],
-    //'scss',
-    //'widget-scss'
-     function() {
-    /*
-    watch( [paths.phpSrc], function( e ) {
+    'browser-sync',
+    'bs-reload'
+], function() {
+    watch( [paths.phpSrc], function() {
         gulp.start( 'bs-reload' )
     } );
-*/
-    watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
-    watch( [paths.widget_scssSrc], ['widget-scss'] );
-    watch( [paths.jsSrc], ['js'] );
-    watch( [paths.jsSrc], ['js-min'] );
-    watch( [paths.widget_jsSrc], ['widget-js'] );
-    watch( [paths.widget_jsSrc], ['widget-js-min'] );
-
-
+    watch( [paths.scssSrc, paths.admin_scssSrc ], function() {
+        gulp.start( 'scss' )
+    } );
+    watch( [paths.widget_scssSrc], function() {
+        gulp.start( 'widget-scss' )
+    } );
+    watch( [paths.jsSrc], function() {
+        gulp.start( 'js' )
+    } );
+    watch( [paths.jsSrc], function() {
+        gulp.start( 'js-min' )
+    } );
+    watch( [paths.widget_jsSrc], function() {
+        gulp.start( 'widget-js' )
+    } );
+    watch( [paths.widget_jsSrc], function() {
+        gulp.start( 'widget-js-min' )
+    } );
 } );
 
 gulp.task( 'default', [
-    //'browser-sync',
-    //'bs-reload'
     'scss',
     'widget-scss',
     'js',
     'js-min',
     'widget-js',
-    'widget-js-min'
-    ] );
-    /*
-    */
-    /*
-    */
-    /*
-    */
-
-/*
-gulp.task( 'default', ['browser-sync', 'scss', 'widget-scss', 'widget-js', 'widget-js-min', 'bs-reload'], function() {
-    watch( [paths.phpSrc], function( e ) {
-		gulp.start( 'bs-reload' )
-	} );
-    watch( [paths.scssSrc, paths.admin_scssSrc ], function( e ) {
-		gulp.start( 'scss' )
-	} );
-	watch( [paths.widget_scssSrc], function( e ) {
-		gulp.start( 'widget-scss' )
-	} );
-    watch( [paths.jsSrc], function( e ) {
-		gulp.start( 'js' )
-	} );
-	watch( [paths.jsSrc], function( e ) {
-		gulp.start( 'js-min' )
-	} );
-    watch( [paths.widget_jsSrc], function( e ) {
-		gulp.start( 'widget-js' )
-	} );
-	watch( [paths.widget_jsSrc], function( e ) {
-		gulp.start( 'widget-js-min' )
-	} );
+    'widget-js-min',
+    //'watch'
+    ], function() {
 } );
-*/
