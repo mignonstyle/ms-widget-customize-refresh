@@ -121,10 +121,10 @@ gulp.task( 'widget-js-min', function() {
 } );
 */
 gulp.task( 'default', ['scss'], function() {
-    /*
     watch( [paths.phpSrc], function( e ) {
 		gulp.start( 'bs-reload' )
 	} );
+    /*
     watch( [paths.scssSrc, paths.admin_scssSrc ], function( e ) {
 		gulp.start( 'scss' )
 	} );
