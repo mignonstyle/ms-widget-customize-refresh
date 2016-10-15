@@ -11,7 +11,6 @@ var rename       = require( 'gulp-rename' );
 var concat       = require( 'gulp-concat' );
 //var plumber      = require( 'gulp-plumber' );
 var uglify       = require( 'gulp-uglify' );
-//var autoprefixer = require( 'gulp-autoprefixer' );
 //var requireDir   = require( 'require-dir' );
 var browserSync  = require( 'browser-sync' );
 
