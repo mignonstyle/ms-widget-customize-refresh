@@ -1,11 +1,19 @@
-// $ npm install gulp
-// $ npm install
+// $ npm install --save-dev gulp
 // $ npm run build
 
-var gulp        = require( 'gulp' );
-//var path        = require('path');
-//var $           = require( 'gulp-load-plugins' )();
-//var browserSync = require( 'browser-sync' );
+var gulp         = require( 'gulp' );
+var path         = require('path');
+var changed      = require( 'gulp-changed' );
+var concat       = require( 'gulp-concat' );
+var csso         = require( 'gulp-csso' );
+var plumber      = require( 'gulp-plumber' );
+var sass         = require( 'gulp-sass' );
+var uglify       = require( 'gulp-uglify' );
+var rename       = require( 'gulp-rename' );
+var watch        = require( 'gulp-watch' );
+var autoprefixer = require( 'gulp-autoprefixer' );
+var requireDir   = require( 'require-dir' );
+var browserSync  = require( 'browser-sync' );
 
 //var paths = {
 	// base paths
