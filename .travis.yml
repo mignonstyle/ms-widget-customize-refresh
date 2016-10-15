@@ -1,3 +1,8 @@
+# Travis CI (MIT License) configuration file
+# @link https://travis-ci.org/
+
+# Declare project language.
+
 language: node_js
 
 branches:
@@ -6,6 +11,8 @@ branches:
 
 before_script: bash ./.bin/build.sh
 
+# Run test script commands.
+# All commands must exit with code 0 on success. Anything else is considered failure.
 script:
   - ls -al ./css/style.css
 
@@ -15,6 +22,11 @@ script:
 #  skip_cleanup: true
 #  on:
 #    branch: master
+
+# Receive notifications for build results.
+# @link http://docs.travis-ci.com/user/notifications/#Email-notifications
+notifications:
+  email: false
 
 env:
   global:
