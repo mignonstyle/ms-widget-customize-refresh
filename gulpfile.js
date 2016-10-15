@@ -4,7 +4,7 @@
 var gulp         = require( 'gulp' );
 //var path         = require( 'path' );
 //var changed      = require( 'gulp-changed' );
-//var concat       = require( 'gulp-concat' );
+var concat       = require( 'gulp-concat' );
 var sass         = require( 'gulp-sass' );
 var plumber      = require( 'gulp-plumber' );
 var rename       = require( 'gulp-rename' );
@@ -99,14 +99,14 @@ gulp.task( 'widget-scss', function() {
 // ------------------------------------------------
 // JS Tasks
 // ------------------------------------------------
-/*
+
 gulp.task( 'js', function() {
     return gulp.src( paths.jsSrc )
         .pipe( concat( 'main.js', {newLine: '\n'} )
     )
     .pipe( gulp.dest( paths.jsDir ) );
 } );
-
+/*
 gulp.task( 'js-min', function() {
     return gulp.src( paths.jsSrc )
         .pipe( uglify( {preserveComments: 'license'} ) )
@@ -143,18 +143,17 @@ gulp.task( 'watch',
 */
     watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
     watch( [paths.widget_scssSrc], ['widget-scss'] );
-
-
+    watch( [paths.jsSrc], ['js'] );
 
 
 } );
 
 gulp.task( 'default', [
-    //'browser-sync',
+    'browser-sync',
     //'bs-reload'
     'scss',
     'widget-scss',
-    //'js',
+    'js',
     //'js-min',
     //'widget-js',
     //'widget-js-min',
@@ -164,9 +163,6 @@ gulp.task( 'default', [
     /*
     */
     /*
-    watch( [paths.jsSrc], function( e ) {
-		gulp.start( 'js' )
-	} );
 	watch( [paths.jsSrc], function( e ) {
 		gulp.start( 'js-min' )
 	} );
