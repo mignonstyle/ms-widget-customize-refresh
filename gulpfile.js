@@ -114,12 +114,12 @@ gulp.task( 'js-min', function() {
     )
     .pipe( gulp.dest( paths.jsDir ) );
 } );
-
+*/
 gulp.task( 'widget-js', function() {
     return gulp.src( paths.widget_jsSrc )
         .pipe( gulp.dest( paths.widget_jsDir ) );
 } );
-
+/*
 gulp.task( 'widget-js-min', function() {
     return gulp.src( paths.widget_jsSrc )
         .pipe( uglify( {preserveComments: 'license'} ) )
@@ -155,7 +155,7 @@ gulp.task( 'default', [
     'widget-scss',
     'js',
     //'js-min',
-    //'widget-js',
+    'widget-js'
     //'widget-js-min',
     ] );
     /*
