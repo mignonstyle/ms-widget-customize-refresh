@@ -5,11 +5,11 @@ var gulp         = require( 'gulp' );
 //var path         = require( 'path' );
 //var changed      = require( 'gulp-changed' );
 //var concat       = require( 'gulp-concat' );
-//var csso         = require( 'gulp-csso' );
-//var plumber      = require( 'gulp-plumber' );
-//var sass         = require( 'gulp-sass' );
+var sass         = require( 'gulp-sass' );
+var plumber      = require( 'gulp-plumber' );
+var rename       = require( 'gulp-rename' );
+var csso         = require( 'gulp-csso' );
 //var uglify       = require( 'gulp-uglify' );
-//var rename       = require( 'gulp-rename' );
 //var watch        = require( 'gulp-watch' );
 //var autoprefixer = require( 'gulp-autoprefixer' );
 //var requireDir   = require( 'require-dir' );
@@ -70,12 +70,10 @@ gulp.task( 'scss', function() {
     } ) )
     .pipe( csso() )
     .pipe( gulp.dest( paths.scssDir ) )
-    /*
     .pipe( browserSync.reload( {
         stream : true,
         once   : true
     } ) );
-    */
 } );
 
 gulp.task( 'widget-scss', function() {
@@ -92,12 +90,10 @@ gulp.task( 'widget-scss', function() {
     } ) )
     .pipe( csso() )
     .pipe( gulp.dest( paths.widget_scssDir ) )
-    /*
     .pipe( browserSync.reload( {
         stream : true,
         once   : true
     } ) );
-    */
 } );
 
 // ------------------------------------------------
@@ -145,8 +141,8 @@ gulp.task( 'watch',
         gulp.start( 'bs-reload' )
     } );
 */
-    //watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
-    //watch( [paths.widget_scssSrc], ['widget-scss'] );
+    watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
+    watch( [paths.widget_scssSrc], ['widget-scss'] );
 
 
 
@@ -154,10 +150,10 @@ gulp.task( 'watch',
 } );
 
 gulp.task( 'default', [
-    'browser-sync',
-    'bs-reload'
-    //'scss',
-    //'widget-scss',
+    //'browser-sync',
+    //'bs-reload'
+    'scss',
+    'widget-scss',
     //'js',
     //'js-min',
     //'widget-js',
