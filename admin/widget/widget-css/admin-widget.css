@@ -103,6 +103,8 @@
   height: 55px; }
 
 #TB_ajaxContent {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 0 0 20px;
   overflow: hidden;
@@ -121,6 +123,7 @@
 @media (max-width: 640px) {
   #TB_window {
     width: 96% !important;
+    width: -webkit-calc(100% - 20px);
     width: calc(100% - 20px);
     margin-left: 0 !important;
     left: 10px !important;
@@ -130,6 +133,7 @@
 
 .icon-lists {
   height: 85%;
+  height: -webkit-calc(100% - 60px);
   height: calc(100% - 60px);
   margin: 0;
   padding: 0 5px 0 0;
@@ -137,6 +141,8 @@
   .icon-lists .icons-inner {
     padding-right: 10px; }
   .icon-lists .icon-list {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: solid 3px #f9f9f9;
     cursor: pointer;
