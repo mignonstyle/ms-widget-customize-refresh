@@ -94,14 +94,13 @@ gulp.task( 'widget-scss', function() {
 gulp.task( 'bs-reload', function() {
 	browserSync.reload();
 } );
-/*
 gulp.task( 'js', function() {
 	return gulp.src( paths.jsSrc )
 		.pipe( concat( 'main.js', {newLine: '\n'} )
 	)
 	.pipe( gulp.dest( paths.jsDir ) );
 } );
-
+/*
 gulp.task( 'js-min', function() {
 	return gulp.src( paths.jsSrc )
 		.pipe( uglify( {preserveComments: 'license'} ) )
