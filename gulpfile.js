@@ -100,7 +100,6 @@ gulp.task( 'js', function() {
 	)
 	.pipe( gulp.dest( paths.jsDir ) );
 } );
-/*
 gulp.task( 'js-min', function() {
 	return gulp.src( paths.jsSrc )
 		.pipe( uglify( {preserveComments: 'license'} ) )
@@ -108,6 +107,7 @@ gulp.task( 'js-min', function() {
 	)
 	.pipe( gulp.dest( paths.jsDir ) );
 } );
+/*
 
 gulp.task( 'widget-js', function() {
 	return gulp.src( paths.widget_jsSrc )
@@ -125,7 +125,7 @@ gulp.task( 'widget-js-min', function() {
 */
 
 
-gulp.task( 'default', ['scss', 'widget-scss'], function() {
+gulp.task( 'default', ['scss', 'widget-scss', 'js', 'js-min'], function() {
     /*
     watch( [paths.phpSrc], function( e ) {
 		gulp.start( 'bs-reload' )
