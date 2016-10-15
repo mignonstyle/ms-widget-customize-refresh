@@ -9,6 +9,7 @@ before_script: bash ./.bin/build.sh
 script:
   - ls -al ./css/style.css
 
+
 deploy:
   provider: script
   script: ./.bin/deploy.sh
