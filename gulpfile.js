@@ -149,7 +149,7 @@ gulp.task( 'watch',
 } );
 
 gulp.task( 'default', [
-    'browser-sync',
+    //'browser-sync',
     //'bs-reload'
     'scss',
     'widget-scss',
