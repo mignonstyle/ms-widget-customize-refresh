@@ -2,15 +2,15 @@
 // $ npm run build
 
 var gulp         = require( 'gulp' );
+var watch        = require( 'gulp-watch' );
+var sass         = require( 'gulp-sass' );
+var csso         = require( 'gulp-csso' );
+var rename       = require( 'gulp-rename' );
 //var path         = require( 'path' );
 //var changed      = require( 'gulp-changed' );
 var concat       = require( 'gulp-concat' );
-var sass         = require( 'gulp-sass' );
-var plumber      = require( 'gulp-plumber' );
-var rename       = require( 'gulp-rename' );
-var csso         = require( 'gulp-csso' );
-//var uglify       = require( 'gulp-uglify' );
-//var watch        = require( 'gulp-watch' );
+//var plumber      = require( 'gulp-plumber' );
+var uglify       = require( 'gulp-uglify' );
 //var autoprefixer = require( 'gulp-autoprefixer' );
 //var requireDir   = require( 'require-dir' );
 var browserSync  = require( 'browser-sync' );
@@ -20,22 +20,22 @@ var browserSync  = require( 'browser-sync' );
 // ------------------------------------------------
 var paths = {
     // base paths
-    "phpSrc" : "./**/*.php",
+    "phpSrc": "./**/*.php",
 
-    "scssSrc" : "./src/scss/**/*.scss",
-    "scssDir" : "./css/",
+    "scssSrc": "./src/scss/**/*.scss",
+    "scssDir": "./css/",
 
-    "jsSrc" : "./src/js/**/*.js",
-    "jsDir" : "./js/",
+    "jsSrc": "./src/js/**/*.js",
+    "jsDir": "./js/",
 
     // admin widget paths
-    "admin_scssSrc" : "./src/admin/admin-widget/*.scss",
+    "admin_scssSrc": "./src/admin/admin-widget/*.scss",
 
-    "widget_scssSrc" : "./src/admin/admin-widget/widget-scss/**/*.scss",
-    "widget_scssDir" : "./admin/widget/widget-css/",
+    "widget_scssSrc": "./src/admin/admin-widget/widget-scss/**/*.scss",
+    "widget_scssDir": "./admin/widget/widget-css/",
 
-    "widget_jsSrc" : "./src/admin/admin-widget/widget-js/**/*.js",
-    "widget_jsDir" : "./admin/widget/widget-js/",
+    "widget_jsSrc": "./src/admin/admin-widget/widget-js/**/*.js",
+    "widget_jsDir": "./admin/widget/widget-js/",
 }
 
 // ------------------------------------------------
@@ -43,9 +43,9 @@ var paths = {
 // ------------------------------------------------
 gulp.task( 'browser-sync', function() {
     browserSync.init( {
-        proxy  : "http://vccw.dev/",
-        notify : true,
-        xip    : false
+        proxy : "http://vccw.dev/",
+        notify: true,
+        xip   : false
     } );
 } );
 
@@ -71,8 +71,8 @@ gulp.task( 'scss', function() {
     .pipe( csso() )
     .pipe( gulp.dest( paths.scssDir ) )
     .pipe( browserSync.reload( {
-        stream : true,
-        once   : true
+        stream: true,
+        once  : true
     } ) );
 } );
 
@@ -91,8 +91,8 @@ gulp.task( 'widget-scss', function() {
     .pipe( csso() )
     .pipe( gulp.dest( paths.widget_scssDir ) )
     .pipe( browserSync.reload( {
-        stream : true,
-        once   : true
+        stream: true,
+        once  : true
     } ) );
 } );
 
@@ -102,25 +102,31 @@ gulp.task( 'widget-scss', function() {
 
 gulp.task( 'js', function() {
     return gulp.src( paths.jsSrc )
-        .pipe( concat( 'main.js', {newLine: '\n'} )
-    )
-    .pipe( gulp.dest( paths.jsDir ) );
+        .pipe( concat( 'main.js' ) )
+        .pipe( gulp.dest( paths.jsDir ) )
+        .pipe( browserSync.reload( {
+            stream: true,
+            once  : true
+        } ) );
 } );
-/*
-gulp.task( 'js-min', function() {
+
+gulp.task( 'js-min', ['js'], function() {
     return gulp.src( paths.jsSrc )
         .pipe( uglify( {preserveComments: 'license'} ) )
-        .pipe( concat( 'main.min.js', {newLine: '\n'} )
-    )
-    .pipe( gulp.dest( paths.jsDir ) );
+        .pipe( concat( 'main.min.js' ) )
+        .pipe( gulp.dest( paths.jsDir ) );
 } );
-*/
+
 gulp.task( 'widget-js', function() {
     return gulp.src( paths.widget_jsSrc )
-        .pipe( gulp.dest( paths.widget_jsDir ) );
+        .pipe( gulp.dest( paths.widget_jsDir ) )
+        .pipe( browserSync.reload( {
+            stream: true,
+            once  : true
+        } ) );
 } );
-/*
-gulp.task( 'widget-js-min', function() {
+
+gulp.task( 'widget-js-min', ['widget-js'], function() {
     return gulp.src( paths.widget_jsSrc )
         .pipe( uglify( {preserveComments: 'license'} ) )
         .pipe( rename( {
@@ -128,11 +134,18 @@ gulp.task( 'widget-js-min', function() {
         } ) )
         .pipe( gulp.dest( paths.widget_jsDir ) );
 } );
-*/
 // ------------------------------------------------
 // Gulp Tasks
 // ------------------------------------------------
-gulp.task( 'watch',
+gulp.task( 'watch', [
+    'scss',
+    'widget-scss',
+    'js',
+    'js-min',
+    'widget-js',
+    'widget-js-min',
+    'browser-sync'
+    ],
     //'scss',
     //'widget-scss'
      function() {
@@ -144,6 +157,9 @@ gulp.task( 'watch',
     watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
     watch( [paths.widget_scssSrc], ['widget-scss'] );
     watch( [paths.jsSrc], ['js'] );
+    watch( [paths.jsSrc], ['js-min'] );
+    watch( [paths.widget_jsSrc], ['widget-js'] );
+    watch( [paths.widget_jsSrc], ['widget-js-min'] );
 
 
 } );
@@ -154,24 +170,15 @@ gulp.task( 'default', [
     'scss',
     'widget-scss',
     'js',
-    //'js-min',
-    'widget-js'
-    //'widget-js-min',
+    'js-min',
+    'widget-js',
+    'widget-js-min'
     ] );
     /*
     */
     /*
     */
     /*
-	watch( [paths.jsSrc], function( e ) {
-		gulp.start( 'js-min' )
-	} );
-    watch( [paths.widget_jsSrc], function( e ) {
-		gulp.start( 'widget-js' )
-	} );
-	watch( [paths.widget_jsSrc], function( e ) {
-		gulp.start( 'widget-js-min' )
-	} );
     */
 
 /*
