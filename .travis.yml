@@ -9,12 +9,12 @@ before_script: bash ./.bin/build.sh
 script:
   - ls -al ./css/style.css
 
-deploy:
-  provider: script
-  script: ./.bin/deploy.sh
-  skip_cleanup: true
-  on:
-    branch: master
+# deploy:
+#  provider: script
+#  script: ./.bin/deploy.sh
+#  skip_cleanup: true
+#  on:
+#    branch: master
 
 env:
   global:
