@@ -135,10 +135,16 @@ gulp.task( 'widget-js-min', function() {
 // ------------------------------------------------
 // Gulp Tasks
 // ------------------------------------------------
-gulp.task( 'watch', function() {
+gulp.task( 'watch', ['scss', 'widget-scss'], function() {
+    /*
     watch( [paths.phpSrc], function( e ) {
         gulp.start( 'bs-reload' )
     } );
+*/
+    watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
+    watch( [paths.widget_scssSrc], ['widget-scss'] );
+    
+
 
 
 } );
@@ -157,12 +163,6 @@ gulp.task( 'default', [
     /*
     */
     /*
-    watch( [paths.scssSrc, paths.admin_scssSrc ], function( e ) {
-		gulp.start( 'scss' )
-	} );
-	watch( [paths.widget_scssSrc], function( e ) {
-		gulp.start( 'widget-scss' )
-	} );
     */
     /*
     watch( [paths.jsSrc], function( e ) {
