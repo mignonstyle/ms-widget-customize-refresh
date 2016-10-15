@@ -6,7 +6,6 @@ var watch        = require( 'gulp-watch' );
 var sass         = require( 'gulp-sass' );
 var csso         = require( 'gulp-csso' );
 var rename       = require( 'gulp-rename' );
-var pleeease     = require( 'gulp-pleeease' );
 //var path         = require( 'path' );
 //var changed      = require( 'gulp-changed' );
 var concat       = require( 'gulp-concat' );
