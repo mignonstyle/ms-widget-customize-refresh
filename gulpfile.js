@@ -50,16 +50,14 @@ gulp.task( 'browser-sync', function() {
 gulp.task( 'scss', function() {
 	return gulp.src( paths.scssSrc )
 		.pipe( sass() )
-        /*
 		.pipe( autoprefixer( {
 			browsers: ['last 2 versions']
 		} ) )
-        */
 	.pipe( gulp.dest( paths.scssDir ) )
 	.pipe( rename( {
 		suffix: '.min'
 	} ) )
-	//.pipe( csso() )
+	.pipe( csso() )
 	.pipe( gulp.dest( paths.scssDir ) )
     /*
 	.pipe( browserSync.reload( {
