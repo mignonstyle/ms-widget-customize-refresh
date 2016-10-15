@@ -37,6 +37,7 @@ var paths = {
 }
 
 // tasks
+/*
 gulp.task( 'browser-sync', function() {
 	browserSync.init( {
 		proxy  : "http://vccw.dev/",
@@ -44,7 +45,7 @@ gulp.task( 'browser-sync', function() {
 		xip    : false
 	} );
 } );
-
+*/
 gulp.task( 'scss', function() {
 	return gulp.src( paths.scssSrc )
 		.pipe( sass() ).on( 'error', sass.logError )
@@ -114,7 +115,7 @@ gulp.task( 'widget-js-min', function() {
 		.pipe( gulp.dest( paths.widget_jsDir ) );
 } );
 */
-gulp.task( 'default', ['browser-sync', 'scss', 'widget-scss'], function() {
+gulp.task( 'default', ['scss', 'widget-scss'], function() {
     watch( [paths.phpSrc], function( e ) {
 		gulp.start( 'bs-reload' )
 	} );
