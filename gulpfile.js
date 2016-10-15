@@ -11,7 +11,7 @@ var sass         = require( 'gulp-sass' );
 var uglify       = require( 'gulp-uglify' );
 var rename       = require( 'gulp-rename' );
 var watch        = require( 'gulp-watch' );
-var autoprefixer = require( 'gulp-autoprefixer' );
+//var autoprefixer = require( 'gulp-autoprefixer' );
 var requireDir   = require( 'require-dir' );
 var browserSync  = require( 'browser-sync' );
 
@@ -61,10 +61,12 @@ gulp.task( 'scss', function() {
 	} ) )
 	.pipe( csso() )
 	.pipe( gulp.dest( paths.scssDir ) )
+    /*
 	.pipe( browserSync.reload( {
 		stream : true,
 		once   : true
 	} ) );
+    */
 } );
 
 /*
@@ -120,10 +122,14 @@ gulp.task( 'widget-js-min', function() {
 		.pipe( gulp.dest( paths.widget_jsDir ) );
 } );
 */
-gulp.task( 'default', ['scss', 'bs-reload'], function() {
+
+
+gulp.task( 'default', ['scss'], function() {
+    /*
     watch( [paths.phpSrc], function( e ) {
 		gulp.start( 'bs-reload' )
 	} );
+    */
     /*
     watch( [paths.scssSrc, paths.admin_scssSrc ], function( e ) {
 		gulp.start( 'scss' )
