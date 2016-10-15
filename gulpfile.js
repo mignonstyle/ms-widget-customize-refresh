@@ -69,25 +69,27 @@ gulp.task( 'scss', function() {
     */
 } );
 
-/*
 gulp.task( 'widget-scss', function() {
 	return gulp.src( paths.widget_scssSrc )
-		.pipe( sass() ).on( 'error', sass.logError )
+		.pipe( sass() )
+        /*
 		.pipe( autoprefixer( {
 			browsers: ['last 2 versions']
 		} ) )
+        */
 	.pipe( gulp.dest( paths.widget_scssDir ) )
 	.pipe( rename( {
 		suffix: '.min'
 	} ) )
 	.pipe( csso() )
 	.pipe( gulp.dest( paths.widget_scssDir ) )
+    /*
 	.pipe( browserSync.reload( {
 		stream : true,
 		once   : true
 	} ) );
+    */
 } );
-*/
 
 gulp.task( 'bs-reload', function() {
 	browserSync.reload();
@@ -124,7 +126,7 @@ gulp.task( 'widget-js-min', function() {
 */
 
 
-gulp.task( 'default', ['scss'], function() {
+gulp.task( 'default', ['scss', 'widget-scss'], function() {
     /*
     watch( [paths.phpSrc], function( e ) {
 		gulp.start( 'bs-reload' )
