@@ -11,7 +11,7 @@ var rename       = require( 'gulp-rename' );
 var concat       = require( 'gulp-concat' );
 //var plumber      = require( 'gulp-plumber' );
 var uglify       = require( 'gulp-uglify' );
-//var autoprefixer = require( 'gulp-autoprefixer' );
+var autoprefixer = require( 'gulp-autoprefixer' );
 //var requireDir   = require( 'require-dir' );
 var browserSync  = require( 'browser-sync' );
 
@@ -59,11 +59,10 @@ gulp.task( 'bs-reload', function() {
 gulp.task( 'scss', function() {
     return gulp.src( paths.scssSrc )
         .pipe( sass() )
-        /*
         .pipe( autoprefixer( {
-            browsers: ['last 2 versions']
+            browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
+            cascade: false
         } ) )
-        */
     .pipe( gulp.dest( paths.scssDir ) )
     .pipe( rename( {
         suffix: '.min'
