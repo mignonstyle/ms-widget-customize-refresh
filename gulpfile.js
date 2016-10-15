@@ -69,11 +69,7 @@ gulp.task( 'scss', function() {
         suffix: '.min'
     } ) )
     .pipe( csso() )
-    .pipe( gulp.dest( paths.scssDir ) )
-    .pipe( browserSync.reload( {
-        stream: true,
-        once  : true
-    } ) );
+    .pipe( gulp.dest( paths.scssDir ) );
 } );
 
 gulp.task( 'widget-scss', function() {
@@ -89,11 +85,7 @@ gulp.task( 'widget-scss', function() {
         suffix: '.min'
     } ) )
     .pipe( csso() )
-    .pipe( gulp.dest( paths.widget_scssDir ) )
-    .pipe( browserSync.reload( {
-        stream: true,
-        once  : true
-    } ) );
+    .pipe( gulp.dest( paths.widget_scssDir ) );
 } );
 
 // ------------------------------------------------
@@ -102,11 +94,7 @@ gulp.task( 'widget-scss', function() {
 gulp.task( 'js', function() {
     return gulp.src( paths.jsSrc )
         .pipe( concat( 'main.js' ) )
-        .pipe( gulp.dest( paths.jsDir ) )
-        .pipe( browserSync.reload( {
-            stream: true,
-            once  : true
-        } ) );
+        .pipe( gulp.dest( paths.jsDir ) );
 } );
 
 gulp.task( 'js-min', ['js'], function() {
@@ -118,11 +106,7 @@ gulp.task( 'js-min', ['js'], function() {
 
 gulp.task( 'widget-js', function() {
     return gulp.src( paths.widget_jsSrc )
-        .pipe( gulp.dest( paths.widget_jsDir ) )
-        .pipe( browserSync.reload( {
-            stream: true,
-            once  : true
-        } ) );
+        .pipe( gulp.dest( paths.widget_jsDir ) );
 } );
 
 gulp.task( 'widget-js-min', ['widget-js'], function() {
@@ -146,26 +130,20 @@ gulp.task( 'watch', [
     'browser-sync',
     'bs-reload'
 ], function() {
-    watch( [paths.phpSrc], function() {
-        gulp.start( 'bs-reload' )
-    } );
-    watch( [paths.scssSrc, paths.admin_scssSrc ], function() {
-        gulp.start( 'scss' )
-    } );
-    watch( [paths.widget_scssSrc], function() {
-        gulp.start( 'widget-scss' )
-    } );
-    watch( [paths.jsSrc], function() {
-        gulp.start( 'js' )
-    } );
-    watch( [paths.jsSrc], function() {
-        gulp.start( 'js-min' )
-    } );
-    watch( [paths.widget_jsSrc], function() {
-        gulp.start( 'widget-js' )
-    } );
-    watch( [paths.widget_jsSrc], function() {
-        gulp.start( 'widget-js-min' )
+    gulp.watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
+    gulp.watch( [paths.widget_scssSrc], ['widget-scss'] );
+    gulp.watch( [paths.jsSrc], ['js', 'js-min'] );
+    gulp.watch( [paths.widget_jsSrc], ['widget-js', 'widget-js-min'] );
+
+    gulp.watch( [
+        paths.phpSrc,
+        paths.scssSrc,
+        paths.admin_scssSrc,
+        paths.widget_scssSrc,
+        paths.jsSrc,
+        paths.widget_jsSrc
+     ], function() {
+        browserSync.reload();
     } );
 } );
 
