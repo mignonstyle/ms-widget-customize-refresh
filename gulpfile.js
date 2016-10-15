@@ -2,17 +2,17 @@
 // $ npm run build
 
 var gulp         = require( 'gulp' );
-var path         = require( 'path' );
-var changed      = require( 'gulp-changed' );
-var concat       = require( 'gulp-concat' );
-var csso         = require( 'gulp-csso' );
-var plumber      = require( 'gulp-plumber' );
-var sass         = require( 'gulp-sass' );
-var uglify       = require( 'gulp-uglify' );
-var rename       = require( 'gulp-rename' );
-var watch        = require( 'gulp-watch' );
+//var path         = require( 'path' );
+//var changed      = require( 'gulp-changed' );
+//var concat       = require( 'gulp-concat' );
+//var csso         = require( 'gulp-csso' );
+//var plumber      = require( 'gulp-plumber' );
+//var sass         = require( 'gulp-sass' );
+//var uglify       = require( 'gulp-uglify' );
+//var rename       = require( 'gulp-rename' );
+//var watch        = require( 'gulp-watch' );
 //var autoprefixer = require( 'gulp-autoprefixer' );
-var requireDir   = require( 'require-dir' );
+//var requireDir   = require( 'require-dir' );
 var browserSync  = require( 'browser-sync' );
 
 // ------------------------------------------------
@@ -103,6 +103,7 @@ gulp.task( 'widget-scss', function() {
 // ------------------------------------------------
 // JS Tasks
 // ------------------------------------------------
+/*
 gulp.task( 'js', function() {
     return gulp.src( paths.jsSrc )
         .pipe( concat( 'main.js', {newLine: '\n'} )
@@ -131,21 +132,21 @@ gulp.task( 'widget-js-min', function() {
         } ) )
         .pipe( gulp.dest( paths.widget_jsDir ) );
 } );
-
+*/
 // ------------------------------------------------
 // Gulp Tasks
 // ------------------------------------------------
-gulp.task( 'watch', [
-    'scss',
-    'widget-scss'
-    ], function() {
+gulp.task( 'watch',
+    //'scss',
+    //'widget-scss'
+     function() {
     /*
     watch( [paths.phpSrc], function( e ) {
         gulp.start( 'bs-reload' )
     } );
 */
-    watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
-    watch( [paths.widget_scssSrc], ['widget-scss'] );
+    //watch( [paths.scssSrc, paths.admin_scssSrc ], ['scss'] );
+    //watch( [paths.widget_scssSrc], ['widget-scss'] );
 
 
 
@@ -154,14 +155,14 @@ gulp.task( 'watch', [
 
 gulp.task( 'default', [
     'browser-sync',
-    'bs-reload',
-    'scss',
-    'widget-scss',
-    'js',
-    'js-min',
-    'widget-js',
-    'widget-js-min',
-    ], function() {
+    'bs-reload'
+    //'scss',
+    //'widget-scss',
+    //'js',
+    //'js-min',
+    //'widget-js',
+    //'widget-js-min',
+    ] );
     /*
     */
     /*
@@ -180,7 +181,7 @@ gulp.task( 'default', [
 		gulp.start( 'widget-js-min' )
 	} );
     */
-} );
+
 /*
 gulp.task( 'default', ['browser-sync', 'scss', 'widget-scss', 'widget-js', 'widget-js-min', 'bs-reload'], function() {
     watch( [paths.phpSrc], function( e ) {
