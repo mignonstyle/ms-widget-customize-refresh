@@ -80,7 +80,7 @@ gulp.task( 'widget-scss', function() {
 		once   : true
 	} ) );
 } );
-
+/*
 gulp.task( 'bs-reload', function() {
 	browserSync.reload();
 } );
@@ -113,7 +113,33 @@ gulp.task( 'widget-js-min', function() {
 		} ) )
 		.pipe( gulp.dest( paths.widget_jsDir ) );
 } );
-
+*/
+gulp.task( 'default', ['browser-sync', 'scss', 'widget-scss'], function() {
+    watch( [paths.phpSrc], function( e ) {
+		gulp.start( 'bs-reload' )
+	} );
+    watch( [paths.scssSrc, paths.admin_scssSrc ], function( e ) {
+		gulp.start( 'scss' )
+	} );
+	watch( [paths.widget_scssSrc], function( e ) {
+		gulp.start( 'widget-scss' )
+	} );
+    /*
+    watch( [paths.jsSrc], function( e ) {
+		gulp.start( 'js' )
+	} );
+	watch( [paths.jsSrc], function( e ) {
+		gulp.start( 'js-min' )
+	} );
+    watch( [paths.widget_jsSrc], function( e ) {
+		gulp.start( 'widget-js' )
+	} );
+	watch( [paths.widget_jsSrc], function( e ) {
+		gulp.start( 'widget-js-min' )
+	} );
+    */
+} );
+/*
 gulp.task( 'default', ['browser-sync', 'scss', 'widget-scss', 'widget-js', 'widget-js-min', 'bs-reload'], function() {
     watch( [paths.phpSrc], function( e ) {
 		gulp.start( 'bs-reload' )
@@ -137,3 +163,4 @@ gulp.task( 'default', ['browser-sync', 'scss', 'widget-scss', 'widget-js', 'widg
 		gulp.start( 'widget-js-min' )
 	} );
 } );
+*/
