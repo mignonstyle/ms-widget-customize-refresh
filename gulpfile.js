@@ -37,16 +37,6 @@ var paths = {
 }
 
 // tasks
-/*
-gulp.task( 'browser-sync', function() {
-	browserSync.init( {
-		proxy  : "http://vccw.dev/",
-		notify : true,
-		xip    : false
-	} );
-} );
-*/
-
 gulp.task( 'scss', function() {
 	return gulp.src( paths.scssSrc )
 		.pipe( sass() )
@@ -94,12 +84,14 @@ gulp.task( 'widget-scss', function() {
 gulp.task( 'bs-reload', function() {
 	browserSync.reload();
 } );
+
 gulp.task( 'js', function() {
 	return gulp.src( paths.jsSrc )
 		.pipe( concat( 'main.js', {newLine: '\n'} )
 	)
 	.pipe( gulp.dest( paths.jsDir ) );
 } );
+
 gulp.task( 'js-min', function() {
 	return gulp.src( paths.jsSrc )
 		.pipe( uglify( {preserveComments: 'license'} ) )
@@ -107,10 +99,12 @@ gulp.task( 'js-min', function() {
 	)
 	.pipe( gulp.dest( paths.jsDir ) );
 } );
+
 gulp.task( 'widget-js', function() {
 	return gulp.src( paths.widget_jsSrc )
 		.pipe( gulp.dest( paths.widget_jsDir ) );
 } );
+
 gulp.task( 'widget-js-min', function() {
 	return gulp.src( paths.widget_jsSrc )
 		.pipe( uglify( {preserveComments: 'license'} ) )
@@ -119,6 +113,15 @@ gulp.task( 'widget-js-min', function() {
 		} ) )
 		.pipe( gulp.dest( paths.widget_jsDir ) );
 } );
+
+gulp.task( 'browser-sync', function() {
+	browserSync.init( {
+		proxy  : "http://vccw.dev/",
+		notify : true,
+		xip    : false
+	} );
+} );
+
 
 gulp.task( 'default', ['scss', 'widget-scss', 'js', 'js-min', 'widget-js', 'widget-js-min'], function() {
     /*
