@@ -10,8 +10,8 @@ php:
   - 7
 
 branches:
-    - master
-    - dev
+  - master
+  - dev
 
 before_script: bash ./.bin/build.sh
 
