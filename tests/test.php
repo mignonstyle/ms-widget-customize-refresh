@@ -1,9 +1,5 @@
 <?php
 /**
- * Unit Test Sample
+ * require
  */
-class Test extends PHPUnit_Framework_TestCase {
-	public function testOnePlusOne() {
-		$this->assertEquals( 1 + 1, 1 );
-	}
-}
+require_once './one_plus_one.php';

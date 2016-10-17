@@ -18,7 +18,8 @@ before_script: bash ./.bin/build.sh
 # Run test script commands.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
-  - ls -al ./css/style.css
+  # - ls -al ./css/style.css
+  phpunit ./tests/test.php
 
 after_success: bash ./.bin/deploy.sh
 
