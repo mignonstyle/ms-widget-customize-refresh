@@ -2,4 +2,5 @@
 /**
  * require
  */
-require_once dirname(__FILE__) . '/tests/one_plus_one.php';
+require_once dirname(__FILE__) . '/one_plus_one.php';
+new one_plus_one();
