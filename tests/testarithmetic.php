@@ -5,7 +5,7 @@ return false;
 /**
  * Arithmeticクラスのユニットテスト
  */
- 
+
 require_once 'PHPUnit/Autoload.php';
 require_once './arithmetic.php';
 
